@@ -27,4 +27,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("update User u set u.age = ?1 where u.username = ?2")
     int updateAgeByUsername(int age, String username);
 
+    /**
+     * 通过年龄查找用户
+     * @param age
+     */
+    void findByAge(int age);
+
+
 }
